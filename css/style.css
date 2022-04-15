@@ -137,7 +137,13 @@ body {
 }
 
 .sticky + .main {
-  padding-top: 102px;
+  padding-top: 100px;
+}
+
+@media (max-width: 480px) {
+  .sticky + .main {
+    padding-top: 25px;
+  }
 }
 
 .header {
@@ -164,7 +170,7 @@ body {
 
 @media (max-width: 450px) {
   .header__logo {
-    width: 113px;
+    width: 35%;
   }
 }
 
@@ -262,6 +268,25 @@ body {
   right: -15px;
 }
 
+@media (max-width: 800px) {
+  .proposal__bg {
+    position: unset;
+    background-size: contain;
+    background-position: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .proposal__bg {
+    background: url(../img/ballons-mb.png), transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 344px;
+  }
+}
+
 .proposal__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -269,17 +294,76 @@ body {
   position: relative;
 }
 
+@media (max-width: 800px) {
+  .proposal__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .proposal__main {
   z-index: 1;
+}
+
+@media (max-width: 970px) {
+  .proposal__main {
+    width: 62%;
+  }
+}
+
+@media (max-width: 800px) {
+  .proposal__main {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .proposal__main {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 
 .proposal__title {
   font-family: arial-black;
   color: #000332;
-  font-size: 28px;
+  font-size: clamp(28px, 5vw, 24px);
   line-height: 36px;
   padding-top: 50px;
-  width: 490px;
+  max-width: 490px;
+}
+
+@media (max-width: 800px) {
+  .proposal__title {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .proposal__title {
+    text-align: start;
+  }
+}
+
+@media (max-width: 450px) {
+  .proposal__title {
+    padding-top: 10px;
+    font-size: 24px;
+  }
 }
 
 .proposal__title span {
@@ -320,9 +404,50 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+@media (max-width: 945px) {
+  .proposal__cards {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .proposal__cards {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .proposal__cards {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
 }
 
 .proposal__card {
@@ -333,7 +458,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 15px;
-  width: 50%;
+  min-width: 47%;
+  max-width: 275px;
 }
 
 .proposal__card-text {
@@ -358,10 +484,22 @@ body {
   margin-top: 160px;
   z-index: 1;
   max-width: 388px;
+  max-height: 370px;
+}
+
+@media (max-width: 800px) {
+  .proposal__form {
+    margin: 70px auto 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .proposal__form {
+    margin-left: 0;
+  }
 }
 
 .form {
-  position: relative;
   width: 100%;
   border-radius: 13px;
   background-color: white;
@@ -371,6 +509,7 @@ body {
 
 .form__inner {
   padding: 50px 35px 25px;
+  position: relative;
 }
 
 .form__image {

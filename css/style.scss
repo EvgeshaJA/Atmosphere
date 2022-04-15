@@ -147,7 +147,10 @@ body{
     box-shadow: 0px 11px 46px 0px rgba(0, 3, 50, 0.06);
 
     & + .main {
-    padding-top: 102px;
+    padding-top: 100px;
+    @media (max-width:480px) {
+        padding-top: 25px;
+    }
     }
 }
 
@@ -167,7 +170,7 @@ body{
     }
     &__logo{
         @media (max-width: 450px) {
-            width: 113px;
+            width: 35%;
         }
     }
     &__text{
@@ -245,22 +248,61 @@ body{
         position: absolute;
         top: 0px;
         right: -15px;
+        @media (max-width:800px) {
+            position: unset;
+            background-size:contain;
+            background-position:center;
+            margin: 0 auto;
+            width: 100%;
+        }
+        @media (max-width:450px) {
+            background: url(../img/ballons-mb.png), transparent;
+            background-repeat:no-repeat;
+            background-size:contain;
+            height: 344px;
+        }
     }
     
     &__inner{
         display: flex;
         position: relative;
+        @media (max-width:800px) {
+            flex-direction: column;
+        }
     }
 
     &__main{
         z-index: 1;
+        @media (max-width:970px) {
+            width: 62%;
+        }
+        @media (max-width:800px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+        }
+        @media (max-width:600px) {
+            align-items: flex-start;
+        }
     }
     &__title{
         @include title;
-        font-size: 28px;
+        font-size: clamp(28px, 5vw, 24px);
         line-height: 36px;
         padding-top: 50px;
-        width: 490px;
+        max-width: 490px;
+        @media (max-width:800px) {
+            width: 100%;
+            text-align: center;
+        }
+        @media (max-width:600px) {
+            text-align: start;
+        }
+        @media (max-width:450px) {
+            padding-top: 10px;
+            font-size: 24px;
+        }
         span{
             color:$light-blue;
             font-family: Arial, sans-serif;
@@ -289,15 +331,29 @@ body{
         margin-top: 33px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        
-
+        justify-content: start;
+        @media (max-width:945px) {
+            flex-direction: column;
+        }
+        @media (max-width:800px) {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        @media (max-width:600px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
     }
     &__card{
         display: flex;
         align-items:center;
         margin-bottom: 15px;
-        width: 50%;
+        min-width: 47%;
+        max-width: 275px;
     }
     &__card-text{
         margin-left: 18px;
@@ -317,12 +373,19 @@ body{
         margin-top: 160px;
         z-index: 1;
         max-width: 388px;
+        max-height: 370px;
+        @media (max-width:800px) {
+            margin: 70px auto 0;
+
+        }
+        @media (max-width:600px) {
+            margin-left: 0;
+        }
     }
 
 }
 
 .form{
-    position: relative;
     width: 100%;
 
     border-radius: 13px;
@@ -332,6 +395,8 @@ body{
 
     &__inner{
         padding: 50px 35px 25px;
+        position: relative;
+
 
     }
     &__image{
