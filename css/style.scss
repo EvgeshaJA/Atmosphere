@@ -773,6 +773,7 @@ body{
         position: relative;
         @media (max-width:768px) {
             padding-top: 90px;
+            padding-bottom: 45px;
         }
     }
     &__inner-bg{
@@ -790,6 +791,7 @@ body{
     &__form{
         width: 390px;
         height: 370px;
+        margin-bottom: 45px;
 
         & .form__inner{
             padding: 15px 40px 25px;
@@ -896,8 +898,9 @@ body{
         margin-left: 30px;
         max-width: 135px;
         @media (max-width:576px) {
-            margin: 20px 15px 0 0;
-            width: 33%;
+            margin-top:20px;
+            width: 48%;
+            margin-left: 0;
         }
     }
     &__card:first-of-type{
@@ -913,4 +916,181 @@ body{
         font-size: 14px;
         font-style: italic;
     }
+}
+
+
+.minimized {
+    outline: none;
+    cursor: pointer;
+    &:hover {
+        opacity: 10;
+        transform: scale(1.1);
+        filter: grayscale(0) invert(0);
+    }
+}
+#magnify {
+    display: none;
+    position: fixed;
+    width: 30%;
+    height: auto;
+    z-index: 9999999999999;
+    & img {
+        width: 100%;
+    }
+}
+  
+
+#overlay {
+    display: none;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    z-index: 9999999;
+}
+  
+#close-popup {
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+  
+#close-popup i {
+    width: 30px;
+    height: 30px;
+    background: url(https://codernote.ru/files/cross.png) no-repeat center center;
+    background-size: 16px 16px;
+    display: block;
+}
+  
+#close-popup:hover {
+    animation: rota 4s infinite normal;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+
+.objects{
+    & .container{
+        background-color: rgba(249, 249, 250, 0.9);
+        z-index: 0;
+    }
+    &__title{
+        padding-top: 45px;
+        @include title;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        @media (max-width:450px) {
+            font-size: 20px;
+        }
+    }
+
+    &__card{
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 16px 46px 0px rgba(0, 3, 50, 0.09);
+        margin-top: 25px;
+    }
+    &__card-inner{
+        padding: 20px;
+        display: flex;
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        @media (max-width:450px){
+            padding: 20px 15px;
+        }
+    }
+
+    &__image-main{
+        width: 260px;
+    }
+    &__image-min{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+    &__content{
+        margin-left: 1.56vw;
+        width: 65%;
+        @media (max-width:768px) {
+            margin-left: 0;
+            width: 80%;
+        }
+        @media (max-width:576px) {
+            width: 100%;
+        }
+    }
+    &__content-title{
+        padding-top: 10px;
+        @include title;
+        font-size: 20px;
+        width: 74%;
+        @media (max-width:992px) {
+            width: 100%;
+        }
+    }
+    &__content-values{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__content-value{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        p{
+            margin-left: 6px;
+            font-size: 14px;
+            color: #8090a3;
+        }
+        span{
+            color: $blue;
+        }
+    }
+    &__cost{
+        margin-top: 20px;
+        display: flex;
+        div{
+            margin-right: 2.08vw;
+            @media (max-width:450px) {
+                margin-right: 3px;
+            }
+        }
+        div:last-of-type{
+            margin-right: 0;
+        }
+        p{
+            font-size: 14px;
+            color: #8090a3;
+        }
+        span{
+            font-size: 24px;
+            font-weight: bold;
+            color: $blue;
+            margin-top: 5px;
+        }
+    }
+
+    &__button{
+        width: 313px;
+        height: 60px;
+        margin: 30px auto 0;
+        @media (max-width:450px) {
+            width: 100%;
+        }
+    }
+
+      
 }

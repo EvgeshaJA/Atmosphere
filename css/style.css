@@ -985,6 +985,7 @@ body {
 @media (max-width: 768px) {
   .calculation__inner {
     padding-top: 90px;
+    padding-bottom: 45px;
   }
 }
 
@@ -1007,6 +1008,7 @@ body {
 .calculation__form {
   width: 390px;
   height: 370px;
+  margin-bottom: 45px;
 }
 
 .calculation__form .form__inner {
@@ -1151,8 +1153,9 @@ body {
 
 @media (max-width: 576px) {
   .calculation__card {
-    margin: 20px 15px 0 0;
-    width: 33%;
+    margin-top: 20px;
+    width: 48%;
+    margin-left: 0;
   }
 }
 
@@ -1168,5 +1171,240 @@ body {
   text-align: center;
   font-size: 14px;
   font-style: italic;
+}
+
+.minimized {
+  outline: none;
+  cursor: pointer;
+}
+
+.minimized:hover {
+  opacity: 10;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-filter: grayscale(0) invert(0);
+          filter: grayscale(0) invert(0);
+}
+
+#magnify {
+  display: none;
+  position: fixed;
+  width: 30%;
+  height: auto;
+  z-index: 9999999999999;
+}
+
+#magnify img {
+  width: 100%;
+}
+
+#overlay {
+  display: none;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 9999999;
+}
+
+#close-popup {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#close-popup i {
+  width: 30px;
+  height: 30px;
+  background: url(https://codernote.ru/files/cross.png) no-repeat center center;
+  background-size: 16px 16px;
+  display: block;
+}
+
+#close-popup:hover {
+  -webkit-animation: rota 4s infinite normal;
+          animation: rota 4s infinite normal;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.objects .container {
+  background-color: rgba(249, 249, 250, 0.9);
+  z-index: 0;
+}
+
+.objects__title {
+  padding-top: 45px;
+  font-family: arial-black;
+  color: #000332;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  .objects__title {
+    font-size: 20px;
+  }
+}
+
+.objects__card {
+  border-radius: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0px 16px 46px 0px rgba(0, 3, 50, 0.09);
+          box-shadow: 0px 16px 46px 0px rgba(0, 3, 50, 0.09);
+  margin-top: 25px;
+}
+
+.objects__card-inner {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .objects__card-inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .objects__card-inner {
+    padding: 20px 15px;
+  }
+}
+
+.objects__image-main {
+  width: 260px;
+}
+
+.objects__image-min {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 10px;
+}
+
+.objects__content {
+  margin-left: 1.56vw;
+  width: 65%;
+}
+
+@media (max-width: 768px) {
+  .objects__content {
+    margin-left: 0;
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .objects__content {
+    width: 100%;
+  }
+}
+
+.objects__content-title {
+  padding-top: 10px;
+  font-family: arial-black;
+  color: #000332;
+  font-size: 20px;
+  width: 74%;
+}
+
+@media (max-width: 992px) {
+  .objects__content-title {
+    width: 100%;
+  }
+}
+
+.objects__content-values {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.objects__content-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.objects__content-value p {
+  margin-left: 6px;
+  font-size: 14px;
+  color: #8090a3;
+}
+
+.objects__content-value span {
+  color: #000332;
+}
+
+.objects__cost {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.objects__cost div {
+  margin-right: 2.08vw;
+}
+
+@media (max-width: 450px) {
+  .objects__cost div {
+    margin-right: 3px;
+  }
+}
+
+.objects__cost div:last-of-type {
+  margin-right: 0;
+}
+
+.objects__cost p {
+  font-size: 14px;
+  color: #8090a3;
+}
+
+.objects__cost span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000332;
+  margin-top: 5px;
+}
+
+.objects__button {
+  width: 313px;
+  height: 60px;
+  margin: 30px auto 0;
+}
+
+@media (max-width: 450px) {
+  .objects__button {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
