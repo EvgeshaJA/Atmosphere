@@ -1865,4 +1865,182 @@ body {
   color: #199aff;
   font-style: italic;
 }
+
+.guarantees .container {
+  background: url(../img/bg-3.png), transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: visible;
+}
+
+.guarantees__inner {
+  padding-top: 80px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+  .guarantees__inner {
+    width: 100%;
+  }
+}
+
+.guarantees__blok {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 576px) {
+  .guarantees__blok {
+    display: block;
+  }
+}
+
+.guarantees__card {
+  min-width: 266px;
+  height: 140px;
+  background-color: white;
+  -webkit-box-shadow: 0px 11px 46px 0px rgba(0, 3, 50, 0.09);
+          box-shadow: 0px 11px 46px 0px rgba(0, 3, 50, 0.09);
+  border-radius: 30px;
+  position: relative;
+}
+
+.guarantees__card::after {
+  content: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAELUlEQVRogdWaa6hVRRTHf10N0xT0km9DfGBeH2EqhoYiXSUR0YtWBoV+SUVIrwQK4gdBRfCTjz74yk8WpX5IBd+ICqKipVa+00K92EEFlRA1nyxZR+aOZ+89M3vvw71/OHDOnjVr1v/MrDVrzew3Oqx9Tk4YCiwGBgLn9fvuPIaqyInABOAIUA20AYYBu4BpeQwWSqIT0C6i7X1ga0TbOmBURFsl0DnEGF8SHXVJXAWuAfuBuUBPo/1Agg6ZkT76XYyepc+uqd6DQG8fo3x94hxQFdF2RAevdNDzCPgVGAK8WaL9ts72YxejfGbi4xgC6Lp3ISBoBnwUQUDwDvCZq2E+JD7xkM0CY/MgMaDMJPq7CvqQ6BtmSzC6u3Z0JTE+NPylQEvdVxJtjIpOY9TxBmnE6VZmAiauA5eAE8AxYJst0NT63VE3qiFlNzUa7+qnWiXOApOAi8Ue9lRtaWAESkF8c48Znk0SnXUJNQZ0NXb9eiT+byQEinhlr0niFnC0jEYs0TRdEsZvgTsefa+aPmE79i9aB+SNYdYf9qf64ylNOZIgss+KMrZj/1CGZTUzYsbrgHmOOn40f9gk/gUOh9uXCInxa2KEDjnokEz6tPnAJiH7RI/sbX+JAlCTINPEQU9bu94wSXyoDLt6GvcU+E3XcxxcsuAvHWSExEnNKuqRqNEtParkjMJ2TdQGa6R5L2JJiB/8kaBLapWFjuM2N2t2yZ0+UGa+OK6zVwr7jFp6MzDZQXddYJI5Rmbi+4COgqUxbaM1aXvsSGBLiix5dVNdBiH4J6GP5GDtHfTKkvg00AZBtwpz5/NEpwTxezobceijxzhpUBASMwIVzE05OJqNpkVthUaT6QGd5fRjZYrBxQ+6pOgvWCCBoxhi1wPjgIeeSmYDywMGl9lP4weCKcXgYm52O7QcLXgqmwOs8JDvm5B6JOEuMBzYWJSz0w7JS84EKK4FVjnKpvWDOju/s0lUapocglkOM/JTBqcmVZoZRJKQ3KVFigFqY3zkG+CLFLqLkCTxK/OBTWJiBoPM0eJquO4lUrl9p5+sUO+c1jx3qtQSNcuLl6eO6XUIegF/YRn8dg43R3kRELQqfjGNFq//PcdBs8RNjaSvkZB19TlwpYETKNgbs33acUnXmnj/SHVKKVdbl9/WV/gP+FtPRA5pmL5vCrhcd7XSGQqtO9JgPrA26UzK586u4FgfZIUHrnuWTzQ6W0YC6BJygg+J0w4yWcL5T/Mhsb/MJPa6CvqQ2AnciGm/ADzx0Hc+pk3uuX92VeS7Q1dbh2Sy4SzTe40qvWF1uUAfofW1HFIsspbqOQ3v92P610PoWzb99F+/UKJtZMKrEZLJbirxXF6teCukngnNlc5EEEDfzfg6om1BBAHB5cCCLLdXhTbo60Jy4ynlpBxhTk04cAsD8ALEOr+hLxcALgAAAABJRU5ErkJggg==);
+  position: absolute;
+  top: -20px;
+  right: -10px;
+}
+
+.guarantees__card-inner {
+  text-align: center;
+}
+
+.guarantees__card-inner span {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 42px;
+  color: #199aff;
+}
+
+.guarantees__card-inner p {
+  color: #8090a3;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.guarantees__text {
+  margin-left: 40px;
+  color: #8090a3;
+  font-size: 16px;
+}
+
+@media (max-width: 576px) {
+  .guarantees__text {
+    margin-top: 25px;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+.guarantees__title {
+  margin-top: 45px;
+  text-align: center;
+  color: #8090a3;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.guarantees__image {
+  width: 67%;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+@media (max-width: 576px) {
+  .guarantees__image {
+    width: 100%;
+  }
+}
+
+.slider {
+  position: relative;
+}
+
+.slider__card {
+  border: none;
+  outline: none;
+}
+
+.slider .minimized {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+@media (max-width: 576px) {
+  .slider .minimized {
+    min-width: 172px;
+  }
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slick-slider .slick-arrow {
+  position: absolute;
+  font-size: 0;
+  width: 37px;
+  height: 37px;
+  background-color: #fff;
+  border-radius: 100%;
+  z-index: 9999;
+}
+
+.slick-slider .slick-arrow.slick-prev {
+  top: 45%;
+  left: 20px;
+}
+
+.slick-slider .slick-arrow.slick-next {
+  top: 45%;
+  right: 20px;
+}
+
+.slick-slider .slick-arrow.slick-prev::before {
+  content: url(../img/arrow-thin-right.png);
+}
+
+.slick-slider .slick-arrow.slick-next::before {
+  content: url(../img/arrow-thin-left.png);
+}
+
+.reviews__title {
+  padding-top: 75px;
+  font-size: 24px;
+  font-family: arial-black;
+  color: #000332;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 576px) {
+  .reviews__title {
+    width: 100%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
