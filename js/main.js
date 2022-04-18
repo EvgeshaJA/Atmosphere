@@ -4,6 +4,8 @@ window.onscroll = function() {myFunction();};
 
 const header = document.querySelector(".header");
 const sticky = header.offsetTop;
+const form = document.querySelectorAll('.form-body');
+
 
 function myFunction() {
   if (window.pageYOffset >= sticky) {
@@ -12,6 +14,7 @@ function myFunction() {
     header.classList.remove("sticky");
   }
 }
+
 
 $(".slider").slick({
   arrows: false,
@@ -78,6 +81,8 @@ $(".slider").slick({
   ],
 });
 
+
+
 $(function () {
   $(".minimized").click(function (event) {
     var i_path = $(this).attr("src");
@@ -104,18 +109,17 @@ $(function () {
 });
 
 
-const form = document.querySelector('.form')
 
-form.addEventListener('submit', function (e){
-  e.preventDefault()
-  const formData = new FormData(e.target); // Просто так вывести в консоль этот объект не олучится, но у него есть метод get прим. formData.get('name') вернет значение  по ключу name
-  const formProps = Object.fromEntries(formData); // Переведет форм дату в обычный объект
+
+form.forEach.addEventListener('submit', function (e){
+  e.preventDefault();
+  const formData = new FormData(e.target); 
+  const formProps = Object.fromEntries(formData); 
   fetch('php/send.php',{
     method: 'POST',
     body: JSON.stringify(formProps),
     headers: {
       'Content-type': 'application/json'
     }
-  })
-})
-
+  });
+});
