@@ -40,7 +40,7 @@ $(".slider").slick({
       settings: {
         arrows: true,
         centerMode: true,
-        centerPadding: '50px',
+        centerPadding: '60px',
         slidesToShow: 2
  
       },
@@ -50,18 +50,30 @@ $(".slider").slick({
       settings: {
         arrows: true,
         centerMode: true,
-        centerPadding: '50px',
+        centerPadding: '30px',
         slidesToShow: 2
       },
     },
     {
-      breakpoint: 480,
+      breakpoint: 450,
       settings: {
         arrows: true,
         centerMode: true,
-        centerPadding: '55px',
+        centerPadding: '10px',
+        slidesToShow: 2
+      },
+      
+    },
+
+    {
+      breakpoint: 400,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: '50px',
         slidesToShow: 1
       },
+      
     },
   ],
 });

@@ -925,6 +925,7 @@ body{
         filter: grayscale(0) invert(0);
     }
 }
+
 #magnify {
     display: none;
     position: fixed;
@@ -933,6 +934,12 @@ body{
     z-index: 9999999999999;
     & img {
         width: 100%;
+    }
+    @media (max-width:768px) {
+        width: 60%;
+    }
+    @media (max-width:450px) {
+        width: 80%;
     }
 }
   
@@ -1526,13 +1533,16 @@ body{
         border: none;
         outline: none;
     }
-    
     & .minimized{
         transform: unset;
-        @media (max-width:576px) {
-            min-width: 172px;
-        }
     }
+    & .image__wrapper{
+        @media (max-width:576px) {
+            width: 172px;
+        }
+
+    }
+
     
 }
 

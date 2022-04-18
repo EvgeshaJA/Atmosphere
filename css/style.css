@@ -1200,6 +1200,18 @@ body {
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  #magnify {
+    width: 60%;
+  }
+}
+
+@media (max-width: 450px) {
+  #magnify {
+    width: 80%;
+  }
+}
+
 #overlay {
   display: none;
   background: #000;
@@ -1983,8 +1995,8 @@ body {
 }
 
 @media (max-width: 576px) {
-  .slider .minimized {
-    min-width: 172px;
+  .slider .image__wrapper {
+    width: 172px;
   }
 }
 
