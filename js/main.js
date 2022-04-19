@@ -21,6 +21,7 @@ function myFunction() {
 }
 
 
+
 $(".slider").slick({
   arrows: false,
   dots: false,
@@ -114,6 +115,8 @@ $(function () {
 });
 
 
+
+
 forms.forEach((form) => {
   form.addEventListener('submit', function (e){
     e.preventDefault();
@@ -126,6 +129,9 @@ forms.forEach((form) => {
         'Content-type': 'application/json'
       }
     });
+
+    window.location.href = "thanks.html";
+
   });
 });
 
