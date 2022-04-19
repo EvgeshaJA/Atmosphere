@@ -104,10 +104,10 @@
                 <p class="form__title">Получите <span>точный расчет</span> системы</p>
                 <form class="form-body">
                   <div class="form__input form__input--name">
-                    <input type="text" name="name" placeholder="Ваше имя">
+                    <input type="text" name="name" placeholder="Ваше имя" required>
                   </div>
                   <div class="form__input form__input--tel">
-                    <input type="text" name="phone" placeholder="Ваш телефон">
+                    <input type="tel" name="phone" placeholder="Ваш телефон" required>
                   </div>
                   <div class="form__button">
                     <button class="button" type="submit">
@@ -115,7 +115,7 @@
                     </button>
                   </div>
                   <div>
-                    <input class="form__checkbox" type="checkbox" id="check1">
+                    <input class="form__checkbox" type="checkbox" id="check1" required>
                     <label for="check1">Согласен(-а) на обработку персональных данных</label>
                   </div>
                 </form>
@@ -161,7 +161,7 @@
                     </div>
 
                     <div class="card__button">
-                      <button class="button" type="button">заказать систему<br>
+                      <button class="button modal-button" type="button">заказать систему<br>
                         осчистки</button>
                     </div>
                   </div>
@@ -177,7 +177,7 @@
 
                     </div>
                     <div class="card__button">
-                      <button class="button" type="button">заказать систему<br>
+                      <button class="button modal-button" type="button">заказать систему<br>
                         осчистки</button>
                     </div>
                   </div>
@@ -200,7 +200,7 @@
                     </div>
 
                     <div class="card__button">
-                      <button class="button" type="button">заказать систему<br>
+                      <button class="button modal-button" type="button">заказать систему<br>
                         осчистки</button>
                     </div>
                   </div>
@@ -215,7 +215,7 @@
                     </div>
                     
                     <div class="card__button">
-                      <button class="button" type="button">заказать систему<br>
+                      <button class="button modal-button" type="button">заказать систему
                         осчистки</button>
                     </div>
                   </div>
@@ -231,7 +231,7 @@
                     </div>
                     
                     <div class="card__button">
-                      <button class="button" type="button">заказать систему<br>
+                      <button class="button modal-button" type="button">заказать систему<br>
                         осчистки</button>
                     </div>
                   </div>
@@ -266,7 +266,7 @@
 
               <form class="form-body">
                 <div class="form__input form__input--tel">
-                  <input type="text" name="phone" placeholder="Ваш телефон">
+                  <input type="tel" name="phone" placeholder="Ваш телефон" required>
                 </div>
                 <div class="form__button">
                   <button class="button" type="submit">
@@ -274,7 +274,7 @@
                   </button>
                 </div>
                 <div>
-                  <input class="form__checkbox" type="checkbox" id="check2">
+                  <input class="form__checkbox" type="checkbox" id="check2" required>
                   <label for="check2">Согласен(-а) на обработку персональных данных</label>
                 </div>
               </form>
@@ -412,7 +412,7 @@
 
                     </div>
                     <div class="objects__button">
-                      <button class="button">оставить заявку на просчет</button>
+                      <button class="button modal-button">оставить заявку на просчет</button>
                     </div>
                   </div>
               </div>
@@ -485,7 +485,7 @@
 
                   </div>
                   <div class="objects__button">
-                    <button class="button">оставить заявку на просчет</button>
+                    <button class="button modal-button">оставить заявку на просчет</button>
                   </div>
                 </div>
             </div>
@@ -558,7 +558,7 @@
 
                 </div>
                 <div class="objects__button">
-                  <button class="button">оставить заявку на просчет</button>
+                  <button class="button modal-button">оставить заявку на просчет</button>
                 </div>
               </div>
           </div>
@@ -631,7 +631,7 @@
 
               </div>
               <div class="objects__button">
-                <button class="button">оставить заявку на просчет</button>
+                <button class="button modal-button">оставить заявку на просчет</button>
               </div>
             </div>
         </div>
@@ -704,7 +704,7 @@
 
             </div>
             <div class="objects__button">
-              <button class="button">оставить заявку на просчет</button>
+              <button class="button modal-button">оставить заявку на просчет</button>
             </div>
           </div>
       </div>
@@ -927,16 +927,16 @@
         <div class="map__inner">
 
           <div class="map__content-bl">
-          <div class="map__content">
-            <div class="map__content-inner">
-              <p>г. Новосибирск<br>
-                Бердское шоссе, 4/1</p>
+            <div class="map__content">
+              <div class="map__content-inner">
+                <p>г. Новосибирск<br>
+                  Бердское шоссе, 4/1</p>
+              </div>
             </div>
           </div>
-          </div>
-
-
+        </div>
       </div>
+
     </div>
   </main>
 
@@ -988,6 +988,62 @@
   </div>
     
 
+  <!--MODAL-->
+
+	<!-- modal (start) -->
+	<div class="modal modal__hidden">
+		<div class="overlay"></div>
+		<div class="modal__wrapper">
+			<h2 class="modal__title">
+				Укажите контактные данные
+и удобное время для звонка
+			</h2>
+			<p class="modal__descr">
+				Наш специалист может позвонить вам прямо сейчас
+или в другое рабочее время.
+			</p>
+			<button type="button" class="modal__close" aria-label="закрыть модальное окно">
+			</button>
+      <form class="form-body">
+        <div class="form__input form__input--name">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+        </div>
+        <div class="form__input form__input--tel">
+          <input type="tel" name="phone" placeholder="Ваш телефон" required>
+        </div>
+
+        <div class="form__time">
+            <p>Когда позвонить?</p>
+            
+            <div class="form__radio">
+              <input class="form__radio-input" name="time" type="radio" id="now">
+              <label class="form__radio-label" for="now">Сейчас</label>
+          </div>
+          <div class="form__radio">
+              <input class="form__radio-input" name="time" type="radio" id="time">
+              <label class="form__radio-label" for="time">По времени</label>
+          </div>
+
+        </div>
+
+        <div class="form__input form__input--time">
+          <input type="text" name="time" placeholder="Например: завтра до 12:00">
+        </div>
+
+        <div class="form__button">
+          <button class="button modal-button" type="submit">
+            Оставить заявку
+          </button>
+        </div>
+        <div>
+          <input class="form__checkbox" type="checkbox" id="check3" required>
+          <label for="check3">Согласен(-а) на обработку персональных данных</label>
+        </div>
+      </form>
+			<!-- /.form modal__form -->
+		</div>
+	</div>
+	<!-- modal (end) -->
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="js/slick.min.js"></script>

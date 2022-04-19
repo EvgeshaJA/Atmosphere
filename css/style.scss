@@ -206,6 +206,7 @@ a{
         input{
             color: rgb(180, 191, 204);
             font-size: 14px;
+            width: 100%;
             &::placeholder{
             color: rgb(180, 191, 204);
             font-size: 14px;
@@ -226,6 +227,9 @@ a{
         }
         &--tel::before{
             content: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAA0UlEQVQokZXSMUpDURCF4S8pbNOaLVhpk07EkMbWUlAhS7AR3YBapMoKop2FIFgmxMJOCTYWbsTCQmTgPRguQq6nunN4/5w7707nafnWwwP2cYsxfqxRF48YooPT5rxWAe4VXx3Ugl+Ft10LfhbevBZ8SfU7rmvB+1RvYfM/ia9NvYGbWjB0lrxjnNeCkXqV/JgzlqHfvO8FFphgFFxsTm5yh6PU4Bsf2CkCZ21iKNYsrpmTY+YSCp1ksIUvsZt+2F9almCrmHnQNJhilTbsGYe/KyMla2VTIhMAAAAASUVORK5CYII=);
+        }
+        &--time{
+            padding-left: 30px;
         }
 
     }
@@ -262,7 +266,60 @@ a{
             border-color: #f4f5f7;
             background-color: #f4f5f7;
             background-image: url(data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAf0lEQVQYlY3RMQrCUAwG4E8ROrg4Cq5eprs4KHTwEN7BI4iTBU+gq+CVXF0sgVcoLdb3T4F8gZBMluevjCxQzDLgGi/Mp5lwhecY7sI7doErlH/gBp/AFzywH4PRCHxIqMbxF4zENW4dfEr1ALY40g5c00rbPoz0nxLHf2P4KTS/Oh4JHnPVzQAAAABJRU5ErkJggg==);
-          }
+        }
+    }
+    &__time{
+        font-size: 14px;
+        color: #8090a3;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        p{
+            margin-right: 25px;
+            @media (max-width:450px) {
+                width: 100%;
+            }
+        }
+
+        @media (max-width:450px) {
+            flex-wrap: wrap;
+        }
+    
+    }
+    &__radio{
+        margin-right: 15px;
+        @media (max-width:450px) {
+            margin-top: 15px;
+        }
+    }
+    &__radio-input{
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        
+        & + label {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+
+            font-size: 12px;
+            color: #bac4d0;
+        
+        }
+        &:checked + label {
+            color: $light-blue;
+            position: relative
+        }
+        &:checked + label::after{
+            content: '';
+            width: 100%;
+            height: 2px;
+            background-color:$light-blue;
+            bottom: -5px;
+            position: absolute
+        }
+
     }
 }
 
@@ -309,7 +366,7 @@ a{
     overflow: hidden;
     transition: all 0.1s ease-out;
 
-    z-index: 1;
+    z-index: 0;
     @media (max-width: 992px) {
         width: 48.75%;
 
@@ -422,7 +479,7 @@ a{
         opacity: 1;
         transform: scale(1.2);
         transition: all 0.1s ease-out;
-        z-index: 3;
+        z-index: 0;
         @media (max-width:768px){
             transform: unset;
         }
@@ -622,7 +679,6 @@ a{
     }
 
     &__main{
-        z-index: 1;
         @media (max-width:970px) {
             width: 62%;
         }
@@ -720,8 +776,8 @@ a{
         color: $light-blue;
     }
     &__form{
+        z-index: 0;
         margin-top: 160px;
-        z-index: 1;
         max-width: 388px;
         max-height: 370px;
         @media (max-width:800px) {
@@ -967,7 +1023,7 @@ a{
 
 #overlay {
     display: none;
-    background: #000;
+    background: #fff;
     position: fixed;
     top: 0;
     left: 0;
@@ -978,21 +1034,19 @@ a{
 }
   
 #close-popup {
-    width: 30px;
-    height: 30px;
-    background: #ffffff;
-    border-radius: 15px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 0;
+    right: -20px;
+    
 }
   
 #close-popup i {
-    width: 30px;
-    height: 30px;
-    background: url(https://codernote.ru/files/cross.png) no-repeat center center;
-    background-size: 16px 16px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/close.png) no-repeat center center;
     display: block;
 }
   
@@ -1190,8 +1244,8 @@ a{
         border-bottom-left-radius: 30px;
         width: 255px;
         height: auto;
-        top: 140px;
-        right: -40px;
+        top: 40px;
+        right: -50px;
         @media (max-width:992px) {
             position: unset;
             margin-bottom: 15px;
@@ -1229,7 +1283,7 @@ a{
         border-bottom-left-radius: 30px;
         width: 255px;
         height: 158px;
-        bottom: -167px;
+        bottom: -50px;
         left: 675px;
         @media (max-width:992px) {
             position: unset;
@@ -1746,3 +1800,104 @@ display: flex;
     color: #1f5978;
     text-align: center;
 }
+
+
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    &__hidden{
+        display: none;
+    }
+    &__wrapper {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 9;
+        max-width: 477px;
+        width: 100%;
+        height: 510px;
+        max-height: 100%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 30px 35px;
+        border-radius: 13px;
+        box-shadow: 0px 11px 46px 0px rgba(0, 3, 50, 0.09);
+        @media (max-width:576px) {
+            width: 95%;
+            height: max-content;
+        }
+    }
+    &__title{
+        @include title;
+        font-size: 20px;
+        color: $blue;
+        margin-bottom: 15px;
+    }
+    &__descr{
+        color: #8090a3;
+        font-size: 12px;
+        margin-bottom: 18px;
+    }
+    &__close {
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        top: -20px;
+        right: -40px;
+        border: none;
+        background-color: transparent;
+        background-image: url("../img/close.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        @media (max-width:768px) {
+            right: 0;
+            top: -40px;
+        }
+
+    }
+    &__close:focus {
+        outline: none;
+    }
+}
+
+
+.close {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+    border: none;
+    background-color: transparent;
+    &:focus {
+        outline: none;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+  
+
+  
+
+  
+
+  
+

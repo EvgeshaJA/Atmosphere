@@ -4,7 +4,12 @@ window.onscroll = function() {myFunction();};
 
 const header = document.querySelector(".header");
 const sticky = header.offsetTop;
-const form = document.querySelectorAll('.form-body');
+const forms = document.querySelectorAll('.form-body');
+
+const modalButton = document.querySelectorAll('.modal-button');
+const modal = document.querySelector('.modal');
+const overlay = modal.querySelector('.overlay'); // мы можем искать эл-т не только во всем документе, но и в любом блоке
+const closeButton = document.querySelector('.modal__close');
 
 
 function myFunction() {
@@ -109,17 +114,38 @@ $(function () {
 });
 
 
-
-
-form.forEach.addEventListener('submit', function (e){
-  e.preventDefault();
-  const formData = new FormData(e.target); 
-  const formProps = Object.fromEntries(formData); 
-  fetch('php/send.php',{
-    method: 'POST',
-    body: JSON.stringify(formProps),
-    headers: {
-      'Content-type': 'application/json'
-    }
+forms.forEach((form) => {
+  form.addEventListener('submit', function (e){
+    e.preventDefault();
+    const formData = new FormData(e.target); 
+    const formProps = Object.fromEntries(formData); 
+    fetch('php/send.php',{
+      method: 'POST',
+      body: JSON.stringify(formProps),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    });
   });
 });
+
+
+
+
+
+modalButton.forEach((i) => { 
+    i.addEventListener('click', (event) => { 
+        modal.classList.remove('modal__hidden');
+    });
+});
+
+overlay.addEventListener('click', () => {
+    modal.classList.add('modal__hidden');
+});
+
+closeButton.addEventListener('click', () => {
+    modal.classList.add('modal__hidden');
+});
+
+
+
