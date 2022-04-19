@@ -7,6 +7,10 @@ require './Exception.php';
 // Переменные, которые отправляет пользователь, они равны инпутам из формы
 $name = $_POST['name'];
 $email = $_POST['phone'];
+$time = $_POST['time'];
+$custom_time = $_POST['custom-time'];
+
+
 
 // Формирование самого письма
 $title = "Заголовок письма";
@@ -14,6 +18,8 @@ $body = "
 <h2>Новое письмо</h2>
 <b>Имя:</b> $name<br>
 <b>Почта:</b> $email<br><br>
+<b>Имя:</b> $time<br>
+<b>Почта:</b> $custom_time<br><br>
 ";
 
 // Настройки PHPMailer
@@ -34,7 +40,7 @@ try {
     $mail->setFrom('mail@yandex.ru', 'Имя отправителя'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('youremail@yandex.ru'); //Тут пишешь свой email
+    $mail->addAddress('ZmenkaJA@yandex.ru'); //Тут пишешь свой email
 
 // Отправка сообщения
 $mail->isHTML(true);

@@ -8,7 +8,7 @@ const forms = document.querySelectorAll('.form-body');
 
 const modalButton = document.querySelectorAll('.modal-button');
 const modal = document.querySelector('.modal');
-const overlay = modal.querySelector('.overlay'); // мы можем искать эл-т не только во всем документе, но и в любом блоке
+const overlay = modal.querySelector('.overlay');
 const closeButton = document.querySelector('.modal__close');
 
 
