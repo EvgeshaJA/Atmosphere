@@ -40,7 +40,7 @@ try {
     $mail->setFrom('mail@yandex.ru', 'Имя отправителя'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('ZmenkaJA@yandex.ru'); //Тут пишешь свой email
+    $mail->addAddress('atmosferavoda@mail.ru'); //Ваш email
 
 // Отправка сообщения
 $mail->isHTML(true);

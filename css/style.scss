@@ -479,7 +479,7 @@ a{
         opacity: 1;
         transform: scale(1.2);
         transition: all 0.1s ease-out;
-        z-index: 0;
+        z-index: 1;
         @media (max-width:768px){
             transform: unset;
         }
@@ -1810,6 +1810,7 @@ display: flex;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 2;
     &__hidden{
         display: none;
     }
