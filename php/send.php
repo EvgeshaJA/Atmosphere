@@ -28,19 +28,19 @@ try {
     $mail->isSMTP();
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
-    //$mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
     // Настройки вашей почты
-    $mail->Host       = 'smtp.gmail.com'; // SMTP сервера вашей почты
-    $mail->Username   = 'vrednajazmenka@gmail.com'; // Логин на почте
-    $mail->Password   = 'Kanada2022'; // Пароль на почте
+    $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
+    $mail->Username   = 'atmosferavoda@mail.ru'; // Логин на почте
+    $mail->Password   = 'password'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom('mail@yandex.ru', 'Имя отправителя'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('atmosferavoda@mail.ru', 'Заявка'); // Адрес самой почты (сайта) и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('vrednajazmenka@gmail.com'); //Ваш email
+    $mail->addAddress('atmosferavoda@mail.ru'); //Ваш email
 
 // Отправка сообщения
 $mail->isHTML(true);
@@ -62,5 +62,4 @@ $result = "error";
 // Отображение результата
 echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
 
-
-
+?>
